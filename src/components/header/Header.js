@@ -9,8 +9,8 @@ export default function Header() {
           {
             location.pathname !== "/" &&
             <div className="row">
-            <Link className="link" to="/">Home</Link>
-            <button className="link" onClick={() => history.goBack()}>Back</button>
+              <Link className="link" to="/">Home</Link>
+              <button className="button float-right" onClick={() => history.goBack()}>Back</button>
             </div>
           }
 

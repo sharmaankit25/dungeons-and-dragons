@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <Router>
           <Header />
+          <hr />
           <Switch>
               {
                 routes.map(r => <Route {...r} key={r.path} exact />)
