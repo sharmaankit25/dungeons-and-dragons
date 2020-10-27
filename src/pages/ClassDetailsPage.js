@@ -11,7 +11,6 @@ export default function ClassDetailsPage() {
     useEffect(() => {
         const fetchData = async () => {
           const res = await fetchClassDetails(classIndex)
-          console.log(res)
           setDetails({ ...res })
         }
         fetchData()
@@ -25,15 +24,8 @@ export default function ClassDetailsPage() {
             <div>
                 Class: <strong>{ details.name }</strong>
             </div>
-            <h4>Proficiencies</h4>
-            <div className="flex-container">
-            {
-                details.proficiencies.length ?
-                details.proficiencies.map(p =>
-                    <Card key={p.index} text={p.name} />
-                ) :
-                "Loading ..."
-            }
+            <div>
+                Hit Die: <strong>{ details.hit_die }</strong>
             </div>
             <hr/>
             <h4>Sub Classes</h4>
@@ -41,13 +33,34 @@ export default function ClassDetailsPage() {
             {
                 details.subclasses.length ?
                 details.subclasses.map(d =>
-                    <Card key={d.index} text={d.name}>
+                    <Card key={d.index} title={d.name}>
                         <Link to={`/subclasses/${d.index}`} className="button">View Details</Link>
                     </Card>
                 ) :
                 "Loading ..."
             }
             </div>
+            <h4>Proficiencies</h4>
+            <div className="flex-container">
+            {
+                details.proficiencies.length ?
+                details.proficiencies.map(p =>
+                    <Card key={p.index} title={p.name} />
+                ) :
+                "Loading ..."
+            }
+            </div>
+            <h4>Saving Throws</h4>
+            <div className="flex-container">
+            {
+                details.saving_throws.length ?
+                details.saving_throws.map(p =>
+                    <Card key={p.index} title={p.name} />
+                ) :
+                "Loading ..."
+            }
+            </div>
+
             </>
         )
     }

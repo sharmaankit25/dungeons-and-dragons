@@ -18,7 +18,7 @@ export default function Home() {
         {
           classes.length ?
           classes.map(cls =>
-            <Card key={cls.index} text={cls.name}>
+            <Card key={cls.index} title={cls.name}>
               <Link to={`/classes/${cls.index}`} className="button">View Details</Link>
             </Card>
           ) :

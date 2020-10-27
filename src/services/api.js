@@ -11,3 +11,8 @@ export async function fetchClassDetails(classIndex)  {
     const res = await axios.get(BASE_API_URL+'classes/'+classIndex)
     return res.data
 }
+
+export async function fetchSubClassDetails(subclassIndex)  {
+    const res = await axios.get(BASE_API_URL+'subclasses/'+subclassIndex)
+    return res.data
+}

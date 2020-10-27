@@ -2,17 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import routes from './routes'
+import Header from './components/header/Header'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1 className="text-primary">Dungeons and Dragons</h1>
-      </header>
       <Router>
+          <Header />
           <Switch>
               {
-                routes.map(r => <Route {...r} key={r.path} />)
+                routes.map(r => <Route {...r} key={r.path} exact />)
               }
           </Switch>
       </Router>
