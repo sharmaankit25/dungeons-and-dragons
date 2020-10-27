@@ -8,6 +8,14 @@
     margin-bottom: 5px;
 }
 
+.text-primary {
+    color: #BB311D;
+}
+
+.bg-primary {
+    color: #BB311D;
+}
+
 .button {
     background-color: #4CAF50; /* Green */
     border-radius: 2px;
